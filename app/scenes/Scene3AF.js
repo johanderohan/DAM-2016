@@ -17,7 +17,7 @@ SceneScene3AF.prototype.initialize = function () {
 				for(var i = 0 ;i < data.result[0].xml.resultado.votaciones.votacion.length;i++){
 					if (data.result[0].xml.resultado.votaciones.votacion[i].voto=="Sí"){
 						alert(data.result[0].xml.resultado.votaciones.votacion[i].diputado);
-						$("#SceneScene3AF").append("<h5 style='color=white'>"+data.result[0].xml.resultado.votaciones.votacion[i].diputado+"</h5>");
+						$("#SceneScene3AF").append("<h5>"+data.result[0].xml.resultado.votaciones.votacion[i].diputado+"</h5>");
 					}
 				
 				}
