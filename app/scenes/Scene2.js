@@ -19,19 +19,19 @@ SceneScene2.prototype.initialize = function () {
 		success: function(data){
 				alert('success');
 				$("#titulo").html(data.result[0].xml.resultado.informacion.textoexpediente+' '+data.result[0].xml.resultado.informacion.titulosubgrupo);
-				$(".chart").append('<li class="bar afavor" style="height:'+((100*data.result[0].xml.resultado.totales.afavor)/data.result[0].xml.resultado.totales.presentes)*1.2+'%">\
+				$(".chart").append('<li data-id="3" class="bar afavor" style="height:'+((100*data.result[0].xml.resultado.totales.afavor)/data.result[0].xml.resultado.totales.presentes)*1.2+'%">\
 															<div class="percent">'+data.result[0].xml.resultado.totales.afavor+'</div>\
 															<div class="skill">A favor</div>\
 														</li>');
-				$(".chart").append('<li class="bar encontra" style="height:'+((100*data.result[0].xml.resultado.totales.encontra)/data.result[0].xml.resultado.totales.presentes)*1.2+'%">\
+				$(".chart").append('<li data-id="4" class="bar encontra" style="height:'+((100*data.result[0].xml.resultado.totales.encontra)/data.result[0].xml.resultado.totales.presentes)*1.2+'%">\
 															<div class="percent">'+data.result[0].xml.resultado.totales.encontra+'</div>\
 															<div class="skill">En contra</div>\
 														</li>');
-				$(".chart").append('<li class="bar abstenciones" style="height:'+((100*data.result[0].xml.resultado.totales.abstenciones)/data.result[0].xml.resultado.totales.presentes)*1.2+'%">\
+				$(".chart").append('<li data-id="5" class="bar abstenciones" style="height:'+((100*data.result[0].xml.resultado.totales.abstenciones)/data.result[0].xml.resultado.totales.presentes)*1.2+'%">\
 															<div class="percent">'+data.result[0].xml.resultado.totales.abstenciones+'</div>\
 															<div class="skill">Abstenciones</div>\
 														</li>');
-				$(".chart").append('<li class="bar novotan" style="height:'+((100*data.result[0].xml.resultado.totales.novotan)/data.result[0].xml.resultado.totales.presentes)*1.2+'%">\
+				$(".chart").append('<li data-id="6" class="bar novotan" style="height:'+((100*data.result[0].xml.resultado.totales.novotan)/data.result[0].xml.resultado.totales.presentes)*1.2+'%">\
 															<div class="percent">'+data.result[0].xml.resultado.totales.novotan+'</div>\
 															<div class="skill">No votan</div>\
 														</li>');
@@ -84,6 +84,29 @@ SceneScene2.prototype.handleKeyDown = function (keyCode) {
 		case sf.key.DOWN:
 			break;
 		case sf.key.ENTER:
+			event.preventDefault();
+			var scene_id = $('#SceneScene2 ul > .selected').attr("data-id");
+			if(scene_id == "3") {
+				sf.scene.hide('Scene2');
+				sf.scene.show('Scene3AF');
+				sf.scene.focus('Scene3AF');
+			} else if(scene_id == "4")  {
+				sf.scene.hide('Scene0');
+				sf.scene.show('Scene4EC');
+				sf.scene.focus('Scene4EC');
+			}
+			  else if(scene_id == "5")  {
+				sf.scene.hide('Scene0');
+				sf.scene.show('Scene5AB');
+				sf.scene.focus('Scene5AB');
+			}
+			  else { // solo queda la 6
+					sf.scene.hide('Scene0');
+					sf.scene.show('Scene6NV');
+					sf.scene.focus('Scene6NV');
+				}
+			
+			
 			break;
 		case sf.key.RETURN:
 			event.preventDefault();
