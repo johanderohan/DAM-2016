@@ -5,12 +5,32 @@ function SceneScene3AF() {
 };
 
 SceneScene3AF.prototype.initialize = function () {
-	alert("SceneScene3AF.initialize()");
-	// this function will be called only once when the scene manager show this scene first time
-	// initialize the scene controls and styles, and initialize your variables here
-	// scene HTML and CSS will be loaded before this function is called
+	$.ajax({
+		type: "GET",
+		crossDomain: true,
+		async: true,
+		dataType: "json",
+		url: API+"/votaciones",
+		success: function(data){
+				alert('success--');	
+				//alert(data.result[0].xml.resultado.votaciones.votacion.length);	
+				for(var i = 0 ;i < data.result[0].xml.resultado.votaciones.votacion.length;i++){
+					if (data.result[0].xml.resultado.votaciones.votacion[i].voto=="Sí"){
+						alert(data.result[0].xml.resultado.votaciones.votacion[i].diputado);
+						$("#SceneScene3AF").append("<h5 style='color=white'>"+data.result[0].xml.resultado.votaciones.votacion[i].diputado+"</h5>");
+					}
+				
+				}
+			
+			},
+			error: function(){
+				alert('error');
+			}
+		});
+
 
 };
+
 
 SceneScene3AF.prototype.handleShow = function (data) {
 	alert("SceneScene3AF.handleShow()");
