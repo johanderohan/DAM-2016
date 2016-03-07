@@ -17,15 +17,30 @@ SceneScene6NV.prototype.initialize = function () {
 		dataType: "json",
 		url: API+"/votaciones",
 		success: function(data){
-				alert('success--');	
-				//alert(data.result[0].xml.resultado.votaciones.votacion.length);	
+				var elementos_columna = 0;	
 				for(var i = 0 ;i < data.result[0].xml.resultado.votaciones.votacion.length;i++){
 					if (data.result[0].xml.resultado.votaciones.votacion[i].voto=="No vota"){
-						alert(data.result[0].xml.resultado.votaciones.votacion[i].diputado);
-						$("#SceneScene6NV").append("<h5>"+data.result[0].xml.resultado.votaciones.votacion[i].diputado+"</h5>");
+						elementos_columna++;
+						if (elementos_columna <= 24) {
+							if (elementos_columna == 1) $("#SceneScene6NV").append("<div class='col_1'>");
+							$(".col_1").append("<h5>"+data.result[0].xml.resultado.votaciones.votacion[i].diputado+"</h5>");
+							if (elementos_columna == 24) $("#SceneScene6NV").append("</div>");
+						}else if (elementos_columna > 25 && elementos_columna < 50) {
+							if (elementos_columna == 26) $("#SceneScene6NV").append("<div class='col_2'>");
+							$(".col_2").append("<h5>"+data.result[0].xml.resultado.votaciones.votacion[i].diputado+"</h5>");
+							if (elementos_columna == 50) $("#SceneScene6NV").append("</div>");
+						}else if (elementos_columna > 50 && elementos_columna <= 75) {
+							if (elementos_columna == 51) $("#SceneScene6NV").append("<div class='col_3'>");
+							$(".col_3").append("<h5>"+data.result[0].xml.resultado.votaciones.votacion[i].diputado+"</h5>");
+							if (elementos_columna == 75) {
+								$("#SceneScene6NV").append("</div>");
+							}
+							alert(i);
+						}
 					}
 				
 				}
+				elementos_columna = 0;	
 			
 			},
 			error: function(){
