@@ -79,6 +79,9 @@ SceneScene4EC.prototype.handleKeyDown = function (keyCode) {
 		case sf.key.LEFT:
 			break;
 		case sf.key.RIGHT:
+			sf.scene.hide('Scene4EC');
+			sf.scene.show('Scene4EC2');
+			sf.scene.focus('Scene4EC2');
 			break;
 		case sf.key.UP:
 			break;
