@@ -17,10 +17,10 @@ SceneScene6NV.prototype.initialize = function () {
 		dataType: "json",
 		url: API+"/votaciones",
 		success: function(data){
-				$("#SceneScene6NV").append("<div class='col_1'>");
+				$("#SceneScene6NV").append("<div class='col_4'>");
 				for(var i = 0 ;i < data.result[0].xml.resultado.votaciones.votacion.length;i++){
 					if (data.result[0].xml.resultado.votaciones.votacion[i].voto=="No vota")
-							$(".col_1").append("<h5>"+data.result[0].xml.resultado.votaciones.votacion[i].diputado+"</h5>");
+							$(".col_4").append("<h5>"+data.result[0].xml.resultado.votaciones.votacion[i].diputado+"</h5>");
 					}
 					$("#SceneScene6NV").append("</div>");
 			},

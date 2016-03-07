@@ -18,15 +18,15 @@ SceneScene5AB.prototype.initialize = function () {
 		url: API+"/votaciones",
 		success: function(data){
 				var elementos_columna = 0;	
-				$("#SceneScene5AB").append("<div class='col_1'>");
+				$("#SceneScene5AB").append("<div class='col_5'>");
 				for(var i = 0 ;i < data.result[0].xml.resultado.votaciones.votacion.length;i++){
 					if (data.result[0].xml.resultado.votaciones.votacion[i].voto=="Abstención"){
 						elementos_columna++;
 						if (elementos_columna <= 23) {
-							$(".col_1").append("<h5>"+data.result[0].xml.resultado.votaciones.votacion[i].diputado+"</h5>");
-							if (elementos_columna == 23) $("#SceneScene5AB").append("</div><div class='col_2'>");
+							$(".col_5").append("<h5>"+data.result[0].xml.resultado.votaciones.votacion[i].diputado+"</h5>");
+							if (elementos_columna == 23) $("#SceneScene5AB").append("</div><div class='col_6'>");
 						}else if (elementos_columna > 23 ) {
-							$(".col_2").append("<h5>"+data.result[0].xml.resultado.votaciones.votacion[i].diputado+"</h5>");
+							$(".col_6").append("<h5>"+data.result[0].xml.resultado.votaciones.votacion[i].diputado+"</h5>");
 						}
 					}
 				

@@ -23,25 +23,11 @@
 	font-family: 'Roboto Slab', sans-serif;
 	color: #FFF;
 }
-#SceneScene6NV div.col_1 {
+#SceneScene6NV div.col_4 {
 		width : 340px;
 		height : 600px;
 		position : absolute;
 		left : 100px;
-		top : 100px;	
-}
-#SceneScene6NV div.col_2 {
-		width : 320px;
-		height : 600px;
-		position : absolute;
-		left : 500px;
-		top : 100px;	
-}
-#SceneScene6NV div.col_3 {
-		width : 320px;
-		height : 600px;
-		position : absolute;
-		left : 900px;
 		top : 100px;	
 }
 #SceneScene6NV h1 {
