@@ -88,6 +88,12 @@ SceneScene3AF2.prototype.handleKeyDown = function (keyCode) {
 			break;
 		case sf.key.ENTER:
 			break;
+		case sf.key.RETURN:
+			event.preventDefault();
+			sf.scene.hide('Scene3AF2');
+			sf.scene.show('Scene2');
+			sf.scene.focus('Scene2');
+			break;		
 		default:
 			alert("handle default key event, key code(" + keyCode + ")");
 			break;
