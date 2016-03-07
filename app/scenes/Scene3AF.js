@@ -12,12 +12,25 @@ SceneScene3AF.prototype.initialize = function () {
 		dataType: "json",
 		url: API+"/votaciones",
 		success: function(data){
-				alert('success--');	
-				//alert(data.result[0].xml.resultado.votaciones.votacion.length);	
+				var elementos_columna = 0;	
 				for(var i = 0 ;i < data.result[0].xml.resultado.votaciones.votacion.length;i++){
 					if (data.result[0].xml.resultado.votaciones.votacion[i].voto=="Sí"){
-						alert(data.result[0].xml.resultado.votaciones.votacion[i].diputado);
-						$("#SceneScene3AF").append("<h5>"+data.result[0].xml.resultado.votaciones.votacion[i].diputado+"</h5>");
+						elementos_columna++;
+						if (elementos_columna <= 23) {
+							if (elementos_columna == 1) $("#SceneScene3AF").append("<div class='col_1'>");
+							$(".col_1").append("<h5>"+data.result[0].xml.resultado.votaciones.votacion[i].diputado+"</h5>");
+							if (elementos_columna == 23) $("#SceneScene3AF").append("</div>");
+						}else if (elementos_columna > 24 && elementos_columna < 48) {
+							if (elementos_columna == 25) $("#SceneScene3AF").append("<div class='col_2'>");
+							$(".col_2").append("<h5>"+data.result[0].xml.resultado.votaciones.votacion[i].diputado+"</h5>");
+							if (elementos_columna == 48) $("#SceneScene3AF").append("</div>");
+						}else if (elementos_columna > 50) {
+							if (elementos_columna == 51) $("#SceneScene3AF").append("<div class='col_3'>");
+							$(".col_3").append("<h5>"+data.result[0].xml.resultado.votaciones.votacion[i].diputado+"</h5>");
+							if (elementos_columna == 75) $("#SceneScene3AF").append("</div>");
+						}
+						
+						//alert(elementos_columna);
 					}
 				
 				}
