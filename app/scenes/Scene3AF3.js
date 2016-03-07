@@ -6,9 +6,6 @@ function SceneScene3AF3() {
 
 SceneScene3AF3.prototype.initialize = function () {
 	alert("SceneScene3AF3.initialize()");
-	// this function will be called only once when the scene manager show this scene first time
-	// initialize the scene controls and styles, and initialize your variables here
-	// scene HTML and CSS will be loaded before this function is called
 	
 	$.ajax({
 		type: "GET",
@@ -17,25 +14,19 @@ SceneScene3AF3.prototype.initialize = function () {
 		dataType: "json",
 		url: API+"/votaciones",
 		success: function(data){
-				var elementos_columna = 0;	
-				for(var i = 0 ;i < data.result[0].xml.resultado.votaciones.votacion.length;i++){
+				var elementos_columna = 142;	
+				for(var i = 247 ;i < data.result[0].xml.resultado.votaciones.votacion.length;i++){
 					if (data.result[0].xml.resultado.votaciones.votacion[i].voto=="Sí"){
 						elementos_columna++;
-						if (elementos_columna <= 23) {
-							if (elementos_columna == 1) $("#SceneScene3AF3").append("<div class='col_1'>");
+						if (elementos_columna > 142 && elementos_columna < 166 ) {
+							if (elementos_columna == 143) $("#SceneScene3AF3").append("<div class='col_1'>");
 							$(".col_1").append("<h5>"+data.result[0].xml.resultado.votaciones.votacion[i].diputado+"</h5>");
-							if (elementos_columna == 23) $("#SceneScene3AF3").append("</div>");
-						}else if (elementos_columna > 24 && elementos_columna < 48) {
-							if (elementos_columna == 25) $("#SceneScene3AF3").append("<div class='col_2'>");
+							if (elementos_columna == 165) $("#SceneScene3AF3").append("</div>");
+						}else if (elementos_columna > 165 && elementos_columna < 190) {
+							if (elementos_columna == 166) $("#SceneScene3AF3").append("<div class='col_2'>");
 							$(".col_2").append("<h5>"+data.result[0].xml.resultado.votaciones.votacion[i].diputado+"</h5>");
-							if (elementos_columna == 48) $("#SceneScene3AF3").append("</div>");
-						}else if (elementos_columna > 50) {
-							if (elementos_columna == 51) $("#SceneScene3AF3").append("<div class='col_3'>");
-							$(".col_3").append("<h5>"+data.result[0].xml.resultado.votaciones.votacion[i].diputado+"</h5>");
-							if (elementos_columna == 75) $("#SceneScene3AF3").append("</div>");
+							if (elementos_columna == 189) $("#SceneScene3AF3").append("</div>");
 						}
-						
-						//alert(elementos_columna);
 					}
 				
 				}
