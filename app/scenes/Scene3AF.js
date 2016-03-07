@@ -24,13 +24,12 @@ SceneScene3AF.prototype.initialize = function () {
 							if (elementos_columna == 25) $("#SceneScene3AF").append("<div class='col_2'>");
 							$(".col_2").append("<h5>"+data.result[0].xml.resultado.votaciones.votacion[i].diputado+"</h5>");
 							if (elementos_columna == 48) $("#SceneScene3AF").append("</div>");
-						}else if (elementos_columna > 50) {
-							if (elementos_columna == 51) $("#SceneScene3AF").append("<div class='col_3'>");
+						}else if (elementos_columna > 48 && elementos_columna < 72) {
+							if (elementos_columna == 49) $("#SceneScene3AF").append("<div class='col_3'>");
 							$(".col_3").append("<h5>"+data.result[0].xml.resultado.votaciones.votacion[i].diputado+"</h5>");
-							if (elementos_columna == 75) $("#SceneScene3AF").append("</div>");
+							if (elementos_columna == 71) $("#SceneScene3AF").append("</div>");
+							alert(i);
 						}
-						
-						//alert(elementos_columna);
 					}
 				
 				}
@@ -72,7 +71,6 @@ SceneScene3AF.prototype.handleKeyDown = function (keyCode) {
 		case sf.key.LEFT:
 			break;
 		case sf.key.RIGHT:
-			event.preventDefault();
 			sf.scene.hide('Scene3AF');
 			sf.scene.show('Scene3AF2');
 			sf.scene.focus('Scene3AF2');
