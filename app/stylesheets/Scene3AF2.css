@@ -7,7 +7,20 @@
 	background-color : #000;
 	font-family: 'Open Sans', sans-serif;
 }
-
+#SceneScene3AF2 div.foto {
+	background-image :url('../images/f3.jpg');
+	background-size: cover;
+	-webkit-background-size: cover;
+	 -moz-background-size: cover; 
+	 -o-background-size: cover;
+}
+#SceneScene3AF2 div.foto2 {
+	background-image :url('../images/f4.jpg');
+	background-size: cover;
+	-webkit-background-size: cover;
+	 -moz-background-size: cover; 
+	 -o-background-size: cover;
+}
 #SceneScene3AF2:after {
 	content: '';
 	position : absolute;
@@ -15,7 +28,7 @@
 	top : 0px;
 	width : 1280px;
 	height : 720px;
-	background-image : url('../images/diputados.jpg');
+	background-image : url('../images/votacion.jpg');
 	background-size: cover;
   opacity: 0.25;
 }
@@ -23,21 +36,21 @@
 	font-family: 'Roboto Slab', sans-serif;
 	color: #FFF;
 }
-#SceneScene3AF2 div.col_1 {
+#SceneScene3AF2 div.col_7 {
 		width : 350px;
 		height : 600px;
 		position : absolute;
 		left : 100px;
 		top : 100px;	
 }
-#SceneScene3AF2 div.col_2 {
+#SceneScene3AF2 div.col_8 {
 		width : 320px;
 		height : 600px;
 		position : absolute;
 		left : 500px;
 		top : 100px;	
 }
-#SceneScene3AF2 div.col_3 {
+#SceneScene3AF2 div.col_9 {
 		width : 350px;
 		height : 600px;
 		position : absolute;
@@ -51,6 +64,7 @@
 	text-shadow: 0px 0px 4px rgba(150, 150, 150, 1);
 	color: #FFF;
 	margin: 0 auto;
+	margin-left:510px;
 	width: 90%;
 	padding-top: 40px;
 	padding-bottom: 40px;

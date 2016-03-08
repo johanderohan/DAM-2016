@@ -16,20 +16,18 @@ SceneScene3AF.prototype.initialize = function () {
 				for(var i = 0 ;i < data.result[0].xml.resultado.votaciones.votacion.length;i++){
 					if (data.result[0].xml.resultado.votaciones.votacion[i].voto=="Sí"){
 						elementos_columna++;
-						if (elementos_columna <= 24) {
+						if (elementos_columna <= 23) {
 							if (elementos_columna == 1) $("#SceneScene3AF").append("<div class='col_1'>");
 							$(".col_1").append("<h5>"+data.result[0].xml.resultado.votaciones.votacion[i].diputado+"</h5>");
-							if (elementos_columna == 24) $("#SceneScene3AF").append("</div>");
-						}else if (elementos_columna > 25 && elementos_columna < 50) {
-							if (elementos_columna == 26) $("#SceneScene3AF").append("<div class='col_2'>");
+							if (elementos_columna == 23) $("#SceneScene3AF").append("</div>");
+						}else if (elementos_columna > 23 && elementos_columna < 47) {
+							if (elementos_columna == 24) $("#SceneScene3AF").append("<div class='col_2'>");
 							$(".col_2").append("<h5>"+data.result[0].xml.resultado.votaciones.votacion[i].diputado+"</h5>");
-							if (elementos_columna == 50) $("#SceneScene3AF").append("</div>");
-						}else if (elementos_columna > 50 && elementos_columna <= 75) {
-							if (elementos_columna == 51) $("#SceneScene3AF").append("<div class='col_3'>");
+							if (elementos_columna == 47) $("#SceneScene3AF").append("</div>");
+						}else if (elementos_columna > 47 && elementos_columna <= 70) {
+							if (elementos_columna == 48) $("#SceneScene3AF").append("<div class='col_3'>");
 							$(".col_3").append("<h5>"+data.result[0].xml.resultado.votaciones.votacion[i].diputado+"</h5>");
-							if (elementos_columna == 75) {
-								$("#SceneScene3AF").append("</div>");
-							}
+							if (elementos_columna == 70) $("#SceneScene3AF").append("</div>");
 							alert(i);
 						}
 					}

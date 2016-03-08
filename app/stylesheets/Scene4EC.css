@@ -7,7 +7,13 @@
 	background-color : #000;
 	font-family: 'Open Sans', sans-serif;
 }
-
+#SceneScene4EC div.foto {
+	background-image :url('../images/f3.jpg');
+	background-size: cover;
+	-webkit-background-size: cover;
+	 -moz-background-size: cover; 
+	 -o-background-size: cover;
+}
 #SceneScene4EC:after {
 	content: '';
 	position : absolute;
@@ -23,21 +29,21 @@
 	font-family: 'Roboto Slab', sans-serif;
 	color: #FFF;
 }
-#SceneScene4EC div.col_1 {
+#SceneScene4EC div.col_20 {
 		width : 340px;
 		height : 600px;
 		position : absolute;
 		left : 100px;
 		top : 100px;	
 }
-#SceneScene4EC div.col_2 {
+#SceneScene4EC div.col_21 {
 		width : 320px;
 		height : 600px;
 		position : absolute;
 		left : 500px;
 		top : 100px;	
 }
-#SceneScene4EC div.col_3 {
+#SceneScene4EC div.col_22 {
 		width : 320px;
 		height : 600px;
 		position : absolute;
