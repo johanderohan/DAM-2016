@@ -1,10 +1,17 @@
 {
- "files": [],
  "scenes": [
   "Scene1",
   "Scene2",
-  "Scene0"
+  "Scene0",
+  "Scene3AF",
+  "Scene4EC",
+  "Scene5AB",
+  "Scene6NV",
+  "Scene3AF2",
+  "Scene3AF3",
+  "Scene4EC2"
  ],
+ "files": [],
  "theme": "base",
  "modules": ["ime"]
 }

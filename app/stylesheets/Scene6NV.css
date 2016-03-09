@@ -1,0 +1,44 @@
+#SceneScene6NV {
+	position : absolute;
+	left : 0px;
+	top : 0px;
+	width : 1280px;
+	height : 720px;
+	background-color : #000;
+	font-family: 'Open Sans', sans-serif;
+}
+
+#SceneScene6NV:after {
+	content: '';
+	position : absolute;
+	left : 0px;
+	top : 0px;
+	width : 1280px;
+	height : 720px;
+	background-image : url('../images/votacion.jpg');
+	background-size: cover;
+  opacity: 0.25;
+}
+#SceneScene6NV h5 {
+	font-family: 'Roboto Slab', sans-serif;
+	color: #FFF;
+}
+#SceneScene6NV div.col_4 {
+		width : 340px;
+		height : 600px;
+		position : absolute;
+		left : 100px;
+		top : 100px;	
+}
+#SceneScene6NV h1 {
+	font-family: 'Roboto Slab', sans-serif;
+	text-transform:uppercase;
+	font-weight: bold;
+	text-shadow: 0px 0px 4px rgba(150, 150, 150, 1);
+	color: #FFF;
+	margin: 0 auto;
+	margin-left:540px;
+	width: 90%;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
