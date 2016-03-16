@@ -19,19 +19,19 @@ SceneScene2.prototype.initialize = function () {
 		success: function(data){
 				alert('success');
 				$("#titulo").html(data.result[0].xml.resultado.informacion.textoexpediente+' '+data.result[0].xml.resultado.informacion.titulosubgrupo);
-				$(".chart").append('<li class="bar afavor" style="height:'+((100*data.result[0].xml.resultado.totales.afavor)/data.result[0].xml.resultado.totales.presentes)*1.2+'%">\
+				$(".chart").append('<li data-id="1" class="bar afavor" style="height:'+((100*data.result[0].xml.resultado.totales.afavor)/data.result[0].xml.resultado.totales.presentes)*1.2+'%">\
 															<div class="percent">'+data.result[0].xml.resultado.totales.afavor+'</div>\
-															<div class="skill">A favor</div>\
+															<div class="skill" class="selected">A favor</div>\
 														</li>');
-				$(".chart").append('<li class="bar encontra" style="height:'+((100*data.result[0].xml.resultado.totales.encontra)/data.result[0].xml.resultado.totales.presentes)*1.2+'%">\
+				$(".chart").append('<li data-id="2" class="bar encontra" style="height:'+((100*data.result[0].xml.resultado.totales.encontra)/data.result[0].xml.resultado.totales.presentes)*1.2+'%">\
 															<div class="percent">'+data.result[0].xml.resultado.totales.encontra+'</div>\
 															<div class="skill">En contra</div>\
 														</li>');
-				$(".chart").append('<li class="bar abstenciones" style="height:'+((100*data.result[0].xml.resultado.totales.abstenciones)/data.result[0].xml.resultado.totales.presentes)*1.2+'%">\
+				$(".chart").append('<li data-id="3" class="bar abstenciones" style="height:'+((100*data.result[0].xml.resultado.totales.abstenciones)/data.result[0].xml.resultado.totales.presentes)*1.2+'%">\
 															<div class="percent">'+data.result[0].xml.resultado.totales.abstenciones+'</div>\
-															<div class="skill">Abstenciones</div>\
+															<div class="skill">Abstencion</div>\
 														</li>');
-				$(".chart").append('<li class="bar novotan" style="height:'+((100*data.result[0].xml.resultado.totales.novotan)/data.result[0].xml.resultado.totales.presentes)*1.2+'%">\
+				$(".chart").append('<li data-id="4" class="bar novotan" style="height:'+((100*data.result[0].xml.resultado.totales.novotan)/data.result[0].xml.resultado.totales.presentes)*1.2+'%">\
 															<div class="percent">'+data.result[0].xml.resultado.totales.novotan+'</div>\
 															<div class="skill">No votan</div>\
 														</li>');
@@ -67,24 +67,54 @@ SceneScene2.prototype.handleKeyDown = function (keyCode) {
 	alert("SceneScene2.handleKeyDown(" + keyCode + ")");
 	// TODO : write an key event handler when this scene get focued
 	switch (keyCode) {
-		case sf.key.LEFT:
-			break;
-		case sf.key.RIGHT:
-			break;
-		case sf.key.UP:
-			break;
-		case sf.key.DOWN:
-			break;
-		case sf.key.ENTER:
-			break;
-		case sf.key.RETURN:
-			event.preventDefault();
+	case sf.key.LEFT:
+	var currentSelect = $('#SceneScene2 ul > .selected');
+	if (currentSelect.prev().length == 0) { $('#SceneScene2 ul > li:last').addClass('selected');}
+	else { currentSelect.prev().addClass('selected'); }
+	currentSelect.removeClass('selected');
+		break;
+	case sf.key.RIGHT:
+		var currentSelect = $('#SceneScene2 ul > .selected');
+		if (currentSelect.next().length == 0) { $('#SceneScene2 ul > li:first').addClass('selected');}
+		else { currentSelect.next().addClass('selected'); }
+		currentSelect.removeClass('selected');
+		break;
+	case sf.key.UP:
+		break;
+	case sf.key.DOWN:
+		break;
+	case sf.key.ENTER:
+		event.preventDefault();
+		var scene_id = $('#SceneScene2 ul > .selected').attr("data-id");
+		if(scene_id == "1") {
 			sf.scene.hide('Scene2');
-			sf.scene.show('Scene0');
-			sf.scene.focus('Scene0');
-			break;
-		default:
-			alert("handle default key event, key code(" + keyCode + ")");
-			break;
+			sf.scene.show('Scene3');
+			sf.scene.focus('Scene3');
+		}else if(scene_id == "2"){
+			sf.scene.hide('Scene2');
+			sf.scene.show('encontra');
+			sf.scene.focus('encontra');
+		}else if(scene_id == "3"){
+			sf.scene.hide('Scene2');
+			sf.scene.show('abstencion');
+			sf.scene.focus('abstencion');
+		}else {
+			sf.scene.hide('Scene2');
+			sf.scene.show('novota');
+			sf.scene.focus('novota');
+		}
+
+		break;
+	case sf.key.RETURN:
+		event.preventDefault();
+		sf.scene.hide('Scene2');
+		sf.scene.show('Scene0');
+		sf.scene.focus('Scene0');
+		break;
+	case sf.key.TOOLS:
+		break;
+	default:
+		alert("handle default key event, key code(" + keyCode + ")");
+		break;
 	}
 };
