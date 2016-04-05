@@ -1,0 +1,45 @@
+#SceneScene4aF2 {
+	position : absolute;
+	left : 0px;
+	top : 0px;
+	width : 1280px;
+	height : 720px;
+	background-color : #000;
+	background-image : url('');
+	font-family: 'Open Sans', sans-serif;
+}
+#SceneScene4aF2:after {
+	content: '';
+	position : absolute;
+	left : 0px;
+	top : 0px;
+	width : 1280px;
+	height : 720px;
+	background-image : url('../images/diputados.jpg');
+	background-size: cover;
+  opacity: 0.25;
+}
+
+#SceneScene4aF2 #titulo {
+	width : 1140px;
+	height : 50px;
+	top: 10px;
+	margin: 5px;
+	text-align:	center;
+}
+
+#SceneScene4aF2 .cuadroDiputado {
+	width : 1180px;
+	height : 720px;
+	left: 40px;
+    position: relative;
+}
+
+#SceneScene4aF2 .cuadroDiputado .diputado {
+	float: left;
+    height: 25px;
+    width: 350px;
+	margin: 10px;
+	font-size: large;
+	color: white;
+}
