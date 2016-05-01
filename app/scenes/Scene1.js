@@ -9,20 +9,22 @@ SceneScene1.prototype.initialize = function () {
 	// this function will be called only once when the scene manager show this scene first time
 	// initialize the scene controls and styles, and initialize your variables here
 	// scene HTML and CSS will be loaded before this function is called
-		
 	$.ajax({
 	type: "GET",
 	crossDomain: true,
 	async: true,
 	dataType: "json",
 	url: API+"/grupos",
+	
 	success: function(data){
+		alert('Contenido de data[i]: '+data);	
 			alert('success');
 			var total = 0;
 			for (var i = 0; i < data.length; i++) {
 				if(data[i].num_diputados > total) total = data[i].num_diputados;
 			}
-				
+			
+			alert('Contenido de data[i]: '+data);	
 			for (var i = 0; i < data.length; i++) {
 				if(data[i].num_diputados < 50){
 					$(".chart").append('<li class="bar '+data[i].nombre+'" style="height:'+((100*data[i].num_diputados)/total)*4+'%">\

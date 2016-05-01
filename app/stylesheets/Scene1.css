@@ -72,11 +72,11 @@
   overflow: hidden;
   text-transform: uppercase;
   width: 100%;
-  bottom: -60px;
+  bottom: -30px;
   position: absolute;
-  font-size: 16px;
+  font-size: 8px;
 	color: #FFF;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
 }
 #SceneScene1 .chart .Popular {
 	height: 95%;

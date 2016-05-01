@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><widget>
-<cpname> </cpname>
+<cpname>DAMGr04 Congreso</cpname>
 <cplogo> </cplogo>
 <cpauthjs> </cpauthjs>
-<ThumbIcon>icon/sampleIcon_106_87.png</ThumbIcon>
-<BigThumbIcon>icon/sampleIcon_115_95.png</BigThumbIcon>
-<ListIcon>icon/sampleIcon_85_70.png</ListIcon>
-<BigListIcon>icon/sampleIcon_95_78.png</BigListIcon>
-<category> </category>
+<ThumbIcon>icon/ico1.jpg</ThumbIcon>
+<BigThumbIcon>icon/ico2.jpg</BigThumbIcon>
+<ListIcon>icon/ico3.jpg</ListIcon>
+<BigListIcon>icon/ico4.jpg</BigListIcon>
+<category>Politica</category>
 <autoUpdate>n</autoUpdate>
-<ver>0.100</ver>
+<ver>0.101</ver>
 <mgrver> </mgrver>
 <fullwidget>y</fullwidget>
 <type>user</type>
@@ -17,13 +17,13 @@
 <childlock>n</childlock>
 <videomute>n</videomute>
 <dcont>y</dcont>
-<widgetname>DAM</widgetname>
-<description> </description>
+<widgetname>DAM04 Congreso</widgetname>
+<description>Es mi primera aplicacion,(era mi primerito dia, yay)</description>
 <width>1280</width>
 <height>720</height>
-<author> <name> </name>
-<email> </email>
+<author> <name>Alvaro Navarro, Santi Navarro, Imanol Torres, Emilio Aparicio</name>
+<email>alvarzenit@gmail.com</email>
 <link> </link>
-<organization> </organization>
+<organization>UPV</organization>
 </author>
 </widget>
