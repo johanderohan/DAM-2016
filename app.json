@@ -2,8 +2,13 @@
  "files": [],
  "scenes": [
   "Scene1",
+  "Scene0",
   "Scene2",
-  "Scene0"
+  "SceneAFavor",
+  "SceneAFavorV2",
+  "SceneEnContra",
+  "SceneAbstencion",
+  "SceneNoFue"
  ],
  "theme": "base",
  "modules": ["ime"]

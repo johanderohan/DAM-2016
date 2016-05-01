@@ -37,10 +37,10 @@ SceneScene0.prototype.handleKeyDown = function (keyCode) {
 	// TODO : write an key event handler when this scene get focued
 	switch (keyCode) {
 	case sf.key.LEFT:
-	var currentSelect = $('#SceneScene0 ul > .selected');
-	if (currentSelect.prev().length == 0) { $('#SceneScene0 ul > li:last').addClass('selected');}
-	else { currentSelect.prev().addClass('selected'); }
-	currentSelect.removeClass('selected');
+		var currentSelect = $('#SceneScene0 ul > .selected');
+		if (currentSelect.prev().length == 0) { $('#SceneScene0 ul > li:last').addClass('selected');}
+		else { currentSelect.prev().addClass('selected'); }
+		currentSelect.removeClass('selected');
 		break;
 	case sf.key.RIGHT:
 		var currentSelect = $('#SceneScene0 ul > .selected');
